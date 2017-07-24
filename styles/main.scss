@@ -1,8 +1,23 @@
 body, html {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
-.mainContainer{
-  height:100%;
+.mainContainer {
+  height: 100%;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0.5%;
+}
+
+.itemsOneOfTwoColumns {
+
+}
+
+.itemsTwoOfTwoColumns {
+
 }
