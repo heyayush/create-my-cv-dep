@@ -7,16 +7,13 @@ import data from '../data/data.json'
 import AppBar from 'material-ui/AppBar';
 
 const summary = data;
-const cardStyle1 = {
-	"height": '100vh',
-	"opacity": 0.7,
-	"background-position": "center",
-	"background-repeat": "no-repeat",
-	"background-size": "cover"
-}
 const iconStyles = {
 	"height": "40px",
 	"width": "40px"
+};
+const summaryStyles = {
+	"background-color": "#94c5e9",
+	"color": "black"
 };
 
 export default class Summary extends React.Component {
@@ -27,15 +24,10 @@ export default class Summary extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<AppBar title="Summary" iconElementLeft={<IconDescription style={iconStyles}/>}/>
-				<Card className="wSummary">
-					<CardMedia>
-						<h1 className="pSummaryHead">Summary</h1>
-						<SummaryList list={summary.ayush123.summary}/>
-					</CardMedia>
-					<CardActions>
-					</CardActions>
+			<div className="wSummary">
+				<AppBar title="Summary" style={summaryStyles} titleStyle={summaryStyles} iconElementLeft={<IconDescription style={iconStyles}/>}/>
+				<Card style={summaryStyles}>
+					<SummaryList list={summary.ayush123.summary}/>
 				</Card>
 			</div>);
 	}

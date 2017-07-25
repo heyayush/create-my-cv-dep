@@ -30,10 +30,8 @@ export default class SkillsList extends React.Component {
 		})
 
 		return (
-			<div>
-				<ul>
+				<ul className="listContent">
 					{ratingComp}
-				</ul>
-			</div>);
+				</ul>);
 	}
 }

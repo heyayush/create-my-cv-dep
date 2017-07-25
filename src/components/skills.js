@@ -5,7 +5,14 @@ import SkillsList from "./skillsList";
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import IconBuild from 'material-ui/svg-icons/action/build';
 
-
+const skillsStyles = {
+	"background-color": "#94c5e9",
+	"color": "black"
+};
+const iconStyles = {
+	"height": "40px",
+	"width": "40px"
+};
 export default class Skills extends React.Component {
 
 	constructor(props) {
@@ -14,15 +21,10 @@ export default class Skills extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<AppBar title="Skills Section" iconElementLeft={<IconBuild/>}/>
-				<Card className="wSkills">
-					<CardMedia>
-						<h1 className="pSkillsHead">Skills</h1>
+			<div className="wSkills">
+				<AppBar title="Skills" style={skillsStyles} titleStyle={skillsStyles} iconElementLeft={<IconBuild style={iconStyles}/>}/>
+				<Card style={skillsStyles}>
 						<SkillsList list={data.ayush123.skills}/>
-					</CardMedia>
-					<CardActions>
-					</CardActions>
 				</Card>
 			</div>);
 	}

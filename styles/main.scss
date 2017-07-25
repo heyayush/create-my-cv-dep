@@ -1,23 +1,39 @@
 body, html {
-  height: 100%;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .mainContainer {
   height: 100%;
-}
-
-.twoColumns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 0.5%;
-}
-
-.itemsOneOfTwoColumns {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 
 }
 
-.itemsTwoOfTwoColumns {
+@media (min-width: 640px) {
+  .mainContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1px;
+  }
 
+  .wFPoster {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .wSummary {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .wSkills {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .wSummary, .wSkills {
+    border: 0.1rem solid;
+    outline: none;
+  }
 }

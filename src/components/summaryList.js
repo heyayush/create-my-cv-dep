@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../data/data.json'
 
 export default class SummaryList extends React.Component {
 
@@ -14,10 +13,8 @@ export default class SummaryList extends React.Component {
 			);
 		});
 		return (
-			<div>
-				<ul>
-					{listItems}
-				</ul>
-			</div>);
+			<ul className="listContent">
+				{listItems}
+			</ul>);
 	}
 }

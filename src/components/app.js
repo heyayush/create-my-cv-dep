@@ -5,7 +5,6 @@ import '../../styles/index.scss';
 import Summary from "./summary";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import SummaryList from "./summaryList";
 import Skills from "./skills";
 
 export default class App extends React.Component {
@@ -18,12 +17,10 @@ export default class App extends React.Component {
 		return (
 			<MuiThemeProvider>
 				<div className="mainContainer">
-					<FrontPagePoster/>
-					<div className="twoColumns">
-						<Summary className="itemsOneOfTwoColumns"/>
-						<Skills className="itemsTwoOfTwoColumns"/>
-					</div>
-					<DateHeader/>
+					<FrontPagePoster />
+					<Summary />
+					<Skills />
+					{/*<DateHeader/>*/}
 				</div>
 			</MuiThemeProvider>
 		);
