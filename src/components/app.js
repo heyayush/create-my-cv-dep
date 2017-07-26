@@ -6,6 +6,7 @@ import Summary from "./summary";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Skills from "./skills";
+import Education from "./education";
 
 export default class App extends React.Component {
 	constructor() {
@@ -20,6 +21,7 @@ export default class App extends React.Component {
 					<FrontPagePoster />
 					<Summary />
 					<Skills />
+					<Education />
 					{/*<DateHeader/>*/}
 				</div>
 			</MuiThemeProvider>

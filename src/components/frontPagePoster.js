@@ -4,6 +4,7 @@ import BatmanChota from '../../assets/BatmanChota.jpg';
 import BatmanBg from '../../assets/batmanDarkKnight.jpg';
 import ArrowDownward from 'material-ui/svg-icons/navigation/arrow-downward';
 import { white } from 'material-ui/styles/colors';
+import ReactDOM from 'react-dom';
 
 const iconStyles = {
 	"height": "10%",
@@ -12,12 +13,43 @@ const iconStyles = {
 
 export default class FrontPagePoster extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			arrowVisible: true,
+			firstScroll: true
+		};
+		this.handleScroll = this.handleScroll.bind(this);
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll() {
+		if (this.state.firstScroll && this.state.arrowVisible) {
+			this.setState({
+				arrowVisible: false,
+				firstScroll: false
+			});
+			window.scrollTo(0, ReactDOM.findDOMNode(this.myFPosterCard).offsetHeight)
+		} else if (document.documentElement.scrollTop === 0) {
+			this.setState({arrowVisible: true});
+		} else {
+			this.setState({arrowVisible: false});
+		}
+	}
+
 	render() {
 		return (
-			<Card className="wFPoster">
+			<Card className="wFPoster" ref={(ref) => this.myFPosterCard = ref}>
 				<h1 className="pName">Hi, I'm Ayush Sharma</h1>
 				<h2 className="pDesignation">Front-end web developer</h2>
-				<ArrowDownward color={white} style={iconStyles} className="downArrow"/>
+				{this.state.arrowVisible && <ArrowDownward color={white} style={iconStyles} className="downArrow"/>}
 			</Card>
 		)
 	}

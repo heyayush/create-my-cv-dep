@@ -6,6 +6,13 @@
       "Angular" : 4,
       "React" : 3,
       "Javascript" : 4
+    },
+    "education" : {
+      "graduation" : {
+        "college" : "SGSITS, Indore",
+        "year" : "2010 - 2014",
+        "GPA" : 7.2
+      }
     }
   }
 }
