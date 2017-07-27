@@ -37,7 +37,7 @@ export default class FrontPagePoster extends React.Component {
 				firstScroll: false
 			});
 			window.scrollTo(0, ReactDOM.findDOMNode(this.myFPosterCard).offsetHeight)
-		} else if (document.documentElement.scrollTop === 0) {
+		} else if (document.documentElement.scrollTop === 0 && document.body.scrollTop === 0) {
 			this.setState({arrowVisible: true});
 		} else {
 			this.setState({arrowVisible: false});

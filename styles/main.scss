@@ -33,11 +33,16 @@ body, html {
   }
 
   .wEducation {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .wExperience {
     grid-column: 1/2;
     grid-row: 3/4;
   }
 
-  .wSummary, .wSkills, .wEducation {
+  .wSummary, .wSkills, .wEducation, .wExperience {
     border: 0.1rem solid;
     outline: none;
   }
