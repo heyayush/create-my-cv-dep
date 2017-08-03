@@ -10,7 +10,9 @@ var cacheName = 'v1';
 
 // Assets to cache
 var assetsToCache = [
-	'/src/index.js'
+	'./',
+	'/docs/my-bundle.js',
+	'/docs/index.html'
 ];
 
 self.addEventListener('install', function(event) {
@@ -33,14 +35,32 @@ self.addEventListener('install', function(event) {
 	);
 });
 
-// Activate event
-// Be sure to call self.clients.claim()
+//below code controls the updating of service worker
 self.addEventListener('activate', function(event) {
-	// `claim()` sets this worker as the active worker for all clients that
-	// match the workers scope and triggers an `oncontrollerchange` event for
-	// the clients.
-	return self.clients.claim();
+
+	var cacheWhitelist = ['v2'];
+
+	event.waitUntil(
+		caches.keys().then(function(cacheNames) {
+			return Promise.all(
+				cacheNames.map(function(cacheName) {
+					if (cacheWhitelist.indexOf(cacheName) === -1) {
+						return caches.delete(cacheName);
+					}
+				})
+			);
+		})
+	);
 });
+
+// // Activate event
+// // Be sure to call self.clients.claim()
+// self.addEventListener('activate', function(event) {
+// 	// `claim()` sets this worker as the active worker for all clients that
+// 	// match the workers scope and triggers an `oncontrollerchange` event for
+// 	// the clients.
+// 	return self.clients.claim();
+// });
 
 self.addEventListener('fetch', function(event) {
 	// Ignore non-get request like when accessing the admin panel

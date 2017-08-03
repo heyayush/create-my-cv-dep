@@ -1,5 +1,4 @@
 import React from 'react';
-import DateHeader from "./dateHeader";
 import FrontPagePoster from "./frontPagePoster";
 import '../../styles/index.scss';
 import Summary from "./summary";
@@ -24,7 +23,6 @@ export default class App extends React.Component {
 					<Skills />
 					<Experience/>
 					<Education />
-					{/*<DateHeader/>*/}
 				</div>
 			</MuiThemeProvider>
 		);

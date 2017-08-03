@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-// Test if service workers are supported
+//Registering the service worker
 // if ('serviceWorker' in navigator) {
-// 	// Attempt to register it
-// 	navigator.serviceWorker.register('sw.js').then(function() {
-// 		// Success Message
-// 		console.log('ServiceWorker succesfully registered');
-// 	}).catch(function(err) {
-// 		// Error Message
-// 		console.log('ServiceWorker registration failedasdf: ', err);
+// 	window.addEventListener('load', function() {
+// 		navigator.serviceWorker.register('../sw.js').then(function(registration) {
+// 			// Registration was successful
+// 			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+// 		}, function(err) {
+// 			// registration failed :(
+// 			console.log('ServiceWorker registration failed: ', err);
+// 		});
 // 	});
 // }
 

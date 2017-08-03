@@ -10,7 +10,9 @@ const iconStyles = {
 	"height": "10%",
 	"width": "10%"
 };
-
+const posterCard = {
+	"background-color": "orange"
+};
 export default class FrontPagePoster extends React.Component {
 
 	constructor(props) {
@@ -46,7 +48,7 @@ export default class FrontPagePoster extends React.Component {
 
 	render() {
 		return (
-			<Card className="wFPoster" ref={(ref) => this.myFPosterCard = ref}>
+			<Card className="wFPoster" ref={(ref) => this.myFPosterCard = ref} style={posterCard}>
 				<h1 className="pName">Hi, I'm Ayush Sharma</h1>
 				<h2 className="pDesignation">Front-end web developer</h2>
 				{this.state.arrowVisible && <ArrowDownward color={white} style={iconStyles} className="downArrow"/>}
